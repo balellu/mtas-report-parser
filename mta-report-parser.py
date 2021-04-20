@@ -5,15 +5,9 @@ import requests
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options
 opts = Options()
-opts.set_headless()
-assert opts.headless  # Operating in headless mode
-browser = Firefox(options=opts)
+opts.headless = True
 
-    #    results = browser.find_elements_by_class_name('indent')
-    #    results = browser.find_elements_by_tag_name('a')
-    #    results = browser.find_elements_by_id('detail-row-template')
-            #print(result.tag_name)
-                    #print(link.text)
+browser = Firefox(options=opts)
 
 def get_file_list(issuesFileName):
     browser.get(issuesFileName)
@@ -47,24 +41,25 @@ def extract_code_comments(fileName):
 
     codeComments = list()
     if type(results) == list and len(results) > 0:
-        print("Code Comments for File = " + fileName)
         for result in results:
             codeComment = result.get_attribute('innerHTML')
-            #jsonCodeComment = xmltojson.parse(codeComment)
-            #print(jsonCodeComment)
-            codeComments.append(codeComment)
+            tempStr = '<root>' + codeComment + '</root>'
+            jsonCodeComment = xmltojson.parse(tempStr)
+            codeComments.append(jsonCodeComment)
         #break
+        print('========')
+        print("Code Comments for File = " + fileName)
+        print('----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ')
         print(codeComments)
+        print('========')
         return codeComments
 
 def collect_code_comments(fileNames):
     for fileName in fileNames:
-        print('========')
         extract_code_comments(fileName)
-        print('========')
 
 
-fileNames = get_file_list('html file input')
+fileNames = get_file_list('html file name')
 collect_code_comments(fileNames)
 
 browser.quit()
