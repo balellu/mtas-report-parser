@@ -64,7 +64,7 @@ def collect_code_comments(fileNames):
         print('========')
 
 
-fileNames = get_file_list('file:///Users/pbalellu/Panindra/Development/contribute/mta-samples/weblogic-quickstart/output/windup/2656/reports/1/reports/migration_issues.html')
+fileNames = get_file_list('html file input')
 collect_code_comments(fileNames)
 
 browser.quit()
