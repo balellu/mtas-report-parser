@@ -16,7 +16,7 @@ browser = Firefox(options=opts)
 # This method uses selinium to load and parse the html
 # Selinium is used because without it 'click' action cannot be triggered on the html to render the issues links
 ####
-def get_file_list(issuesFileName):
+def get_migration_issues_file_list(issuesFileName):
     browser.get(issuesFileName)
 
     if browser.page_source.find('Migration Mandatory'):
@@ -46,7 +46,6 @@ def get_file_list(issuesFileName):
 # This method prases the issue html file and extracts
 # code comments and writes them out as JSON files
 # It creates the output file in the same location as main input file
-# Selinium is used because without it 'click' action cannot be triggered on the html to render the issues links
 ####
 def extract_code_comments(fileName):
     browser.get(fileName)
@@ -96,9 +95,9 @@ def collect_code_comments(fileNames):
         extract_code_comments(fileName)
 
 if len(sys.argv) == 2 and (str(sys.argv[1]) != None) and str(sys.argv[1]).find('file:///') != -1:
-    fileNames = get_file_list(str(sys.argv[1]))
-    collect_code_comments(fileNames)
+    migrationIssuesfileNames = get_migration_issues_file_list(str(sys.argv[1]))
+    collect_code_comments(migrationIssuesfileNames)
 else:
-    print("Please provide migation issues html file path in the format of: file:///folder/migration_issues.html")
+    print("Please provide migration issues html file path in the format of: file:///folder/migration_issues.html")
 
 browser.quit()
