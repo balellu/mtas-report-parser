@@ -95,9 +95,10 @@ def collect_code_comments(fileNames):
     for fileName in fileNames: 
         extract_code_comments(fileName)
 
-
-fileNames = get_file_list(str(sys.argv[1]))
-collect_code_comments(fileNames)
+if len(sys.argv) == 2 and (str(sys.argv[1]) != None) and str(sys.argv[1]).find('file:///') != -1:
+    fileNames = get_file_list(str(sys.argv[1]))
+    collect_code_comments(fileNames)
+else:
+    print("Please provide migation issues html file path in the format of: file:///folder/migration_issues.html")
 
 browser.quit()
-
