@@ -1,54 +1,54 @@
 {
-   "root":{
-      "a":{
-         "@name":"86160",
-         "@class":"windup-file-location"
+   "codeComment": {
+      "a": {
+         "@name": "86160",
+         "@class": "windup-file-location"
       },
-      "div":{
-         "@class":"inline-source-comment green tag-configuration tag-weblogic",
-         "div":{
-            "@class":"inline-comment",
-            "div":[
+      "div": {
+         "@class": "inline-source-comment green tag-configuration tag-weblogic",
+         "div": {
+            "@class": "inline-comment",
+            "div": [
                {
-                  "@class":"inline-comment-heading",
-                  "strong":{
-                     "@class":"notification warning",
-                     "#text":"WebLogic T3 JNDI binding"
+                  "@class": "inline-comment-heading",
+                  "strong": {
+                     "@class": "notification warning",
+                     "#text": "WebLogic T3 JNDI binding"
                   },
-                  "a":{
-                     "@title":"View Rule: weblogic-eap7-017000",
-                     "@href":"windup_ruleproviders.html#weblogic-eap7-017000",
-                     "span":{
-                        "@class":"glyphicon glyphicon-link rule-link floatRight"
+                  "a": {
+                     "@title": "View Rule: weblogic-eap7-017000",
+                     "@href": "windup_ruleproviders.html#weblogic-eap7-017000",
+                     "span": {
+                        "@class": "glyphicon glyphicon-link rule-link floatRight"
                      }
                   }
                },
                {
-                  "@class":"inline-comment-body",
-                  "p":[
+                  "@class": "inline-comment-body",
+                  "p": [
                      {
-                        "code":[
+                        "code": [
                            "t3://",
                            "t3s://"
                         ],
-                        "#text":"Weblogic\\u2019s implementation of the RMI specification uses a proprietary protocol known as T3. T3S is the version of the protocol over SSL.   and  URLs are used to configure a JNDI InitialContext within WebLogic."
+                        "#text": "Weblogic\u2019s implementation of the RMI specification uses a proprietary protocol known as T3. T3S is the version of the protocol over SSL.   and  URLs are used to configure a JNDI InitialContext within WebLogic."
                      },
                      "The equivalent functionality needs to be configured in JBoss EAP 7. This could be done either by using standard Java EE JNDI names or by using a WebLogic proprietary library if the connectivity to WebLogic server is still required."
                   ],
-                  "ul":{
-                     "li":[
+                  "ul": {
+                     "li": [
                         {
-                           "a":{
-                              "@href":"https://docs.oracle.com/cd/E24329_01/web.1211/e24389/rmi_t3.htm#WLRMI143",
-                              "@target":"_blank",
-                              "#text":"Oracle WebLogic RMI with T3"
+                           "a": {
+                              "@href": "https://docs.oracle.com/cd/E24329_01/web.1211/e24389/rmi_t3.htm#WLRMI143",
+                              "@target": "_blank",
+                              "#text": "Oracle WebLogic RMI with T3"
                            }
                         },
                         {
-                           "a":{
-                              "@href":"https://access.redhat.com/solutions/1230143",
-                              "@target":"_blank",
-                              "#text":"Invoking EJBs deployed on WebLogic from EAP6"
+                           "a": {
+                              "@href": "https://access.redhat.com/solutions/1230143",
+                              "@target": "_blank",
+                              "#text": "Invoking EJBs deployed on WebLogic from EAP6"
                            }
                         }
                      ]
